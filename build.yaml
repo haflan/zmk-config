@@ -5,25 +5,53 @@
 # pass flags to the build command, `snippet` to add a Zephyr snippet, and
 # `artifact-name` to assign a name to distinguish build outputs from each other:
 #
-# board: [ "nice_nano" ]
+# board: [ "nice_nano_v2" ]
 # shield: [ "corne_left", "corne_right" ]
 # include:
 #   - board: bdn9_rev2
-#   - board: nice_nano
+#   - board: nice_nano_v2
 #     shield: reviung41
-#   - board: nice_nano
+#   - board: nice_nano_v2
 #     shield: corne_left
 #     snippet: studio-rpc-usb-uart
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #     artifact-name: corne_left_with_studio
 #
 ---
-# NOTE: https://github.com/carrefinho/forager-zmk-module
-# says to use seeeduino_xiao_ble, but that doesn't exist
-# according to https://zmk.dev/docs/hardware. xiao_ble does.
 include:
-  - board: seeed_xiao_ble
-    shield: forager_left rgbled_adapter
+  # dongle with rgbled
+  - board: seeeduino_xiao_ble
+    shield: forager_dongle rgbled_adapter
     snippet: studio-rpc-usb-uart
-  - board: seeed_xiao_ble
+    artifact-name: forager_dongle_rgbled
+    cmake-args: -DCONFIG_RGBLED_WIDGET_BATTERY_SHOW_SELF=n -DCONFIG_RGBLED_WIDGET_BATTERY_SHOW_PERIPHERALS=n -DCONFIG_RGBLED_WIDGET_BATTERY_SHOW_ONLY_PERIPHERALS=y
+  # dongle prospector with dongle_screen
+  - board: seeeduino_xiao_ble
+    #shield: forager_dongle prospector_adapter
+    shield: forager_dongle dongle_screen
+    cmake-args: -DCONFIG_DONGLE_SCREEN_IDLE_TIMEOUT_S=900 -DCONFIG_DONGLE_SCREEN_MAX_BRIGHTNESS=10
+    #cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+    snippet: studio-rpc-usb-uart
+    artifact-name: forager_dongle_prospector
+  # left side
+  - board: seeeduino_xiao_ble
+    shield: forager_left
+    artifact-name: forager_left
+  # left side + rgbled
+  - board: seeeduino_xiao_ble
+    shield: forager_left rgbled_adapter
+    cmake-args: -DCONFIG_RGBLED_WIDGET_BATTERY_SHOW_SELF=y
+    artifact-name: forager_left_rgbled
+  # right side
+  - board: seeeduino_xiao_ble
+    shield: forager_right
+    artifact-name: forager_right
+  # right side + rgbled
+  - board: seeeduino_xiao_ble
     shield: forager_right rgbled_adapter
+    cmake-args: -DCONFIG_RGBLED_WIDGET_BATTERY_SHOW_SELF=y
+    artifact-name: forager_right_rgbled
+  # settings reset
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+    artifact-name: xiao_ble_settings_reset

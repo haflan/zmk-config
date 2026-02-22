@@ -1,22 +1,40 @@
 manifest:
   defaults:
-    revision: v0.3
+    revision: v0.2
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    # Forager Keyboard + Prospector
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
+    # RGB Led
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+    # ZMK tri-state
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
+    # ZMK Dongle Screen
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
   projects:
     - name: zmk
       remote: zmkfirmware
+      revision: v0.3
       import: app/west.yml
-    - name: forager-zmk-module
-      url: https://github.com/carrefinho/forager-zmk-module
+    - name: forager-zmk-module-dongle
+      remote: carrefinho
       revision: main
-      path: modules/forager-zmk-module
+    #- name: prospector-zmk-module
+    #  remote: carrefinho
+    #  revision: main
     - name: zmk-rgbled-widget
-      url: https://github.com/caksoylar/zmk-rgbled-widget
+      remote: caksoylar
       revision: main
-      path: modules/zmk-rgbled-widget
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: main
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: main
   self:
     path: config
