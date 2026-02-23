@@ -3,14 +3,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE 0
-#define NAV  1
-#define SYM  2
-#define ADJ  3
-
-#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
-#define MEH LS(LC(LALT))
-
 / {
     behaviors {
         as: auto_shift {
@@ -83,10 +75,10 @@
 
         base {
             bindings = <
-            &kp Q           &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y           AS(SEMI)
+            &kp Q           &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y           &as LS(SEMI) SEMI &as LS(SEMI) SEMI
             &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &kp G                                           &kp M           &rhm LGUI N     &rhm LALT E     &rhm LCTRL I    &kp O
-            &kp Z           &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           AS(COMMA)       AS(DOT)         AS(FSLH)
-                                                                            &sym_bspc 2 0   &smart_shift    &smart_shift    &lt NAV SPACE
+            &kp Z           &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           &as LS(COMMA) COMMA       &as LS(DOT) DOT         &as LS(FSLH) FSLH
+                                                                            &sym_bspc 2 0   &smart_shift    &smart_shift    &lt 1 /* NAV */ SPACE
             >;
         };
 
@@ -95,25 +87,7 @@
             &trans          &trans          &trans          &trans          &trans                                          &kp PAGE_UP     &kp LC(PG_UP)   &kp UP          &kp LC(PG_DN)   &kp DELETE
             &trans          &kp LCTRL       &kp LALT        &kp LGUI        &trans                                          &kp PAGE_DOWN   &kp LEFT        &kp DOWN        &kp RIGHT       &kp BSLH
             &trans          &trans          &trans          &trans          &trans                                          &trans          &kp HOME        &kp END         &kp LC(SPACE)   &kp LC(SPACE)
-                                                                            &mo SYM         &kp LSHFT       &trans          &trans
-            >;
-        };
-
-        sym {
-            bindings = <
-            AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)                                          AS(N6)          AS(N7)          AS(N8)          AS(N9)          AS(N0)
-            AS(GRAVE)       &sk LCTRL       &sk LALT        &sk LGUI        &sk LC(LALT)                                    AS(BSLH)        AS(MINUS)       AS(EQUAL)       AS(LBKT)        AS(RBKT)
-            &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &kp ENTER
-                                                                            &trans          &trans          &kp LSHFT       &mo NAV
-            >;
-        };
-
-        adj {
-            bindings = <
-            &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_CLR_ALL                                  &kp C_SLEEP     &trans          &trans          &kp C_BRI_DN    &kp C_BRI_UP
-            &studio_unlock  &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &kp C_VOL_DN    &kp C_VOL_UP
-            &bootloader     &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &bootloader
-                                                                            &trans          &trans          &trans          &trans
+                                                                            &mo 2 /* SYM */        &kp LSHFT       &trans          &trans
             >;
         };
     };
