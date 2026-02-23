@@ -84,19 +84,28 @@
 
         base {
             bindings = <
-  &kp Q  &kp W  &kp E  &kp R              &kp T            &kp Y         &kp U         &kp I      &kp O       &kp P
-  &kp A  &kp S  &kp D  &kp F              &kp G            &kp H         &kp J         &kp K      &kp L       &kp SEMICOLON
-  &kp Z  &kp X  &kp C  &kp V              &kp B            &kp N         &kp M         &kp COMMA  &kp PERIOD  &kp SLASH
-                       &as LS(FSLH) FSLH  &sym_bspc 2 0    &smart_shift  &smart_shift
+  &kp Q             &kp W  &kp E  &kp R              &kp T          &kp Y        &kp U          &kp I      &kp O       &kp P
+  &ht LEFT_SHIFT A  &kp S  &kp D  &kp F              &kp G          &kp H        &kp J          &kp K      &kp L       &ht RIGHT_SHIFT SEMI
+  &kp Z             &kp X  &kp C  &kp V              &kp B          &kp N        &kp M          &kp COMMA  &kp PERIOD  &kp SLASH
+                                  &kp LS(LEFT_META)  &lt 1 SPACE    &lt 2 ENTER  &ht RCTRL TAB
             >;
         };
 
-        nav {
+        sym1 {
             bindings = <
   &trans  &trans     &trans    &trans    &trans       &kp PAGE_UP    &kp LC(PG_UP)  &kp UP    &kp LC(PG_DN)  &kp DELETE
   &trans  &kp LCTRL  &kp LALT  &kp LGUI  &trans       &kp PAGE_DOWN  &kp LEFT       &kp DOWN  &kp RIGHT      &kp BSLH
   &trans  &trans     &trans    &trans    &trans       &trans         &kp HOME       &kp END   &kp LC(SPACE)  &kp LC(SPACE)
                                &mo 2     &kp LSHFT    &trans         &trans
+            >;
+        };
+
+        sym2 {
+            bindings = <
+  &ht EXCLAMATION NUMBER_1  &ht AT_SIGN NUMBER_2  &ht HASH NUMBER_3  &ht DOLLAR NUMBER_4  &ht PERCENT NUMBER_5    &trans  &trans  &trans  &trans  &trans
+  &trans                    &trans                &trans             &trans               &trans                  &trans  &trans  &trans  &trans  &trans
+  &trans                    &trans                &trans             &trans               &trans                  &trans  &trans  &trans  &trans  &trans
+                                                                     &trans               &trans                  &trans  &trans
             >;
         };
     };
