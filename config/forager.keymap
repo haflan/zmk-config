@@ -94,10 +94,10 @@
 
         base {
             bindings = <
-  &kp Q             &kp W  &kp E  &kp R                    &kp T          &kp Y        &kp U          &kp I          &kp O                     &kp P
-  &ht LEFT_SHIFT A  &kp S  &kp D  &kp F                    &kp G          &kp H        &kp J          &kp K          &kp L                     &ht RIGHT_SHIFT SEMI
-  &ht LCTRL Z       &kp X  &kp C  &kp V                    &kp B          &kp N        &kp M          &ht SQT COMMA  &ht DOUBLE_QUOTES PERIOD  &ht MINUS SLASH
-                                  &ht LEFT_META BACKSPACE  &lt 1 SPACE    &lt 1 ENTER  &ht RCTRL TAB
+  &kp Q             &kp W            &kp E  &kp R                    &kp T          &kp Y        &kp U          &kp I            &kp O                     &kp P
+  &ht LEFT_SHIFT A  &kp S            &kp D  &kp F                    &kp G          &kp H        &kp J          &ht AMPERSAND K  &ht PIPE L                &ht RIGHT_SHIFT SEMI
+  &ht LCTRL Z       &ht BACKSLASH X  &kp C  &kp V                    &ht PLUS B     &ht GRAVE N  &ht TILDE M    &ht SQT COMMA    &ht DOUBLE_QUOTES PERIOD  &ht MINUS SLASH
+                                            &ht LEFT_META BACKSPACE  &lt 1 SPACE    &lt 1 ENTER  &ht RCTRL TAB
             >;
         };
 
@@ -106,7 +106,7 @@
   &kp NUMBER_1    &kp NUMBER_2     &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8      &kp NUMBER_9       &kp NUMBER_0
   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LPAR      &kp RPAR      &kp ASTERISK    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW      &kp RIGHT_ARROW    &ht PIPE AMPERSAND
   &kp EXCL        &kp AT_SIGN      &kp HASH      &kp EQUAL     &kp DOLLAR      &kp CARET       &kp UNDERSCORE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT
-                                                 &kp PLUS      &kp ESCAPE      &kp ESCAPE      &kp BACKSLASH
+                                                 &kp DELETE    &kp ESCAPE      &kp ESCAPE      &kp BACKSLASH
             >;
         };
     };
