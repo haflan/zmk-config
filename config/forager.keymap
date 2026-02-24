@@ -87,6 +87,11 @@
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <0 1 9 8>;
         };
+
+        quick_tab {
+            bindings = <&kp TAB>;
+            key-positions = <16 17 18>;
+        };
     };
 
     keymap {
@@ -103,10 +108,10 @@
 
         sym2 {
             bindings = <
-  &kp NUMBER_1    &kp NUMBER_2     &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8      &kp NUMBER_9       &kp NUMBER_0
-  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LPAR      &kp RPAR      &kp ASTERISK    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW      &kp RIGHT_ARROW    &ht AMPERSAND PIPE
-  &kp EXCL        &kp AT_SIGN      &kp HASH      &kp EQUAL     &kp DOLLAR      &kp CARET       &kp UNDERSCORE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT
-                                                 &kp DELETE    &kp ESCAPE      &kp ESCAPE      &kp BACKSLASH
+  &kp NUMBER_1    &kp NUMBER_2     &kp NUMBER_3  &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8      &kp NUMBER_9       &kp NUMBER_0
+  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LPAR      &kp RPAR       &kp ASTERISK    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW      &kp RIGHT_ARROW    &ht AMPERSAND PIPE
+  &kp EXCL        &kp AT_SIGN      &kp HASH      &kp EQUAL      &kp DOLLAR      &kp CARET       &kp UNDERSCORE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT
+                                                 &kp BACKSPACE  &kp ESCAPE      &kp ESCAPE      &kp DELETE
             >;
         };
     };
