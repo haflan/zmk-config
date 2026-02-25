@@ -99,28 +99,19 @@
 
         base {
             bindings = <
-  &kp Q             &kp W            &kp E  &kp R                    &kp T          &kp Y        &kp U          &kp I      &kp O       &kp P
-  &ht LEFT_SHIFT A  &kp S            &kp D  &kp F                    &kp G          &kp H        &kp J          &kp K      &kp L       &ht RIGHT_SHIFT SEMI
-  &ht LCTRL Z       &ht BACKSLASH X  &kp C  &kp V                    &kp B          &kp N        &kp M          &kp COMMA  &kp PERIOD  &kp SLASH
-                                            &ht LEFT_META BACKSPACE  &lt 1 SPACE    &lt 2 ENTER  &ht RCTRL TAB
+  &kp Q             &kp W  &kp E  &kp R                    &kp T                   &kp Y        &kp U          &kp I      &kp O       &kp P
+  &ht LEFT_SHIFT A  &kp S  &kp D  &kp F                    &kp G                   &kp H        &kp J          &kp K      &kp L       &ht RIGHT_SHIFT SEMI
+  &ht LCTRL Z       &kp X  &kp C  &kp V                    &kp B                   &kp N        &kp M          &kp COMMA  &kp PERIOD  &kp SLASH
+                                  &ht LEFT_META BACKSPACE  &ht LEFT_SHIFT SPACE    &lt 1 ENTER  &ht RCTRL TAB
             >;
         };
 
-        sym1 {
+        sym {
             bindings = <
-  &kp ESCAPE   &trans  &trans  &trans     &trans     &trans         &kp LS(RA(Z))  &kp LS(RA(R))  &kp LS(RA(W))  &kp LS(SQT)
-  &kp LC(TAB)  &trans  &trans  &kp LCTRL  &trans     &trans         &kp RA(Z)      &kp RA(R)      &kp RA(W)      &kp SQT
-  &trans       &trans  &trans  &trans     &trans     &kp BACKSLASH  &kp MINUS      &kp TILDE      &kp PLUS       &kp TILDE
-                               &trans     &kp ESC    &kp ESC        &trans
-            >;
-        };
-
-        sym2 {
-            bindings = <
-  &kp NUMBER_1    &kp NUMBER_2     &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8      &kp NUMBER_9       &kp NUMBER_0
-  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LPAR      &kp RPAR      &kp ASTERISK    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW      &kp RIGHT_ARROW    &ht AMPERSAND PIPE
-  &kp EXCL        &kp AT_SIGN      &kp HASH      &kp EQUAL     &kp DOLLAR      &kp CARET       &kp UNDERSCORE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT
-                                                 &kp DELETE    &kp ESC         &kp ESC         &kp BACKSPACE
+  &kp NUMBER_1    &kp NUMBER_2     &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8      &kp NUMBER_9       &kp NUMBER_0
+  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LPAR      &kp RPAR      &kp ASTERISK      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW      &kp RIGHT_ARROW    &ht AMPERSAND PIPE
+  &kp EXCL        &kp AT_SIGN      &kp HASH      &kp EQUAL     &kp DOLLAR        &kp CARET       &kp UNDERSCORE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT
+                                                 &kp DELETE    &kp LEFT_SHIFT    &kp ESC         &kp BACKSPACE
             >;
         };
     };
